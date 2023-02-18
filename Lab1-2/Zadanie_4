@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+//Вариант 1
+namespace Csharp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Уравнение: ax^2 + bx + c = 0");
+
+            Console.WriteLine("Введите число a: ");
+            double a = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Введите число b: ");
+            double b = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Введите число c: ");
+            double c = Convert.ToDouble(Console.ReadLine());
+
+            double dis = b * b - 4 * a * c;
+            Console.WriteLine($"Дискриминант D равен {dis}");
+            Console.WriteLine("\n");
+
+            if (dis > 0)
+            {
+                Console.WriteLine($"x1 = {(-b + Math.Sqrt(dis)) / (2 * a)}");
+                Console.WriteLine($"x2 = {(-b - Math.Sqrt(dis)) / (2 * a)}");
+            }
+            else if (dis == 0)
+            {
+                Console.WriteLine($"x1 = {-b / (2 * a)}");
+            }
+            else
+            {
+                Console.WriteLine("Корней нет!");
+            }
+            Console.ReadKey();
+        }
+    }
+}
