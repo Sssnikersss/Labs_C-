@@ -27,7 +27,11 @@ namespace ConsoleApp2
                     sum1 = sum1 + y;
                 }
                 sum2 = sum2 + sum1;
+                sum1 = 0;
             }
+            Console.Write("Сумма ряда = ");
+            Console.WriteLine(sum2);
+            Console.ReadKey();
         }
     }
 }
