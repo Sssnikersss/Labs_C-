@@ -15,22 +15,38 @@ namespace ConsoleApp2
             double x1 = 1;
             double n2 = 10;
             double x2 = 10;
-            double y = 0;
+            double y1 = 0;
+            double y2 = 0;
             double sum1 = 0;
             double sum2 = 0;
+            double sum3 = 1;
+            double sum4 = 1;
 
             for (double i = x1; i <= x2; i++)
             {
                 for (double j = n1; j <= n2; j++)
                 {
-                    y = (Math.Pow(-1, j) * Math.Pow(i, 2 * j + 1)) / (2 * j + 1);
-                    sum1 = sum1 + y;
+                    y1 = (Math.Pow(-1, j) * Math.Pow(i, 2 * j + 1)) / (2 * j + 1);
+                    sum1 = sum1 + y1;
                 }
                 sum2 = sum2 + sum1;
                 sum1 = 0;
             }
             Console.Write("Сумма ряда = ");
             Console.WriteLine(sum2);
+
+            for (double i = x1; i <= x2 / 2; i++)
+            {
+                for (double j = n1; j <= n2 / 2; j++)
+                {
+                    y2 = (Math.Pow(-1, j) * Math.Pow(i, 2 * j + 1)) / (2 * j + 1);
+                    sum3 = sum3 * y2;
+                }
+                sum4 = sum4 * sum3;
+                sum3 = 1;
+            }
+            Console.Write("Произведение ряда = ");
+            Console.WriteLine(sum4);
             Console.ReadKey();
         }
     }
