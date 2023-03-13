@@ -21,17 +21,17 @@ namespace Csharp1
             double c = Convert.ToDouble(Console.ReadLine());
 
             double dis = b * b - 4 * a * c;
-            Console.WriteLine($"Дискриминант D равен {dis}");
+            Console.WriteLine("Дискриминант D равен " + dis);
             Console.WriteLine("\n");
 
             if (dis > 0)
             {
-                Console.WriteLine($"x1 = {(-b + Math.Sqrt(dis)) / (2 * a)}");
-                Console.WriteLine($"x2 = {(-b - Math.Sqrt(dis)) / (2 * a)}");
+                Console.WriteLine("x1 = " + (-b + Math.Sqrt(dis)) / (2 * a));
+                Console.WriteLine("x2 = " + (-b - Math.Sqrt(dis)) / (2 * a));
             }
             else if (dis == 0)
             {
-                Console.WriteLine($"x1 = {-b / (2 * a)}");
+                Console.WriteLine("x1 = " + (-b / (2 * a)));
             }
             else
             {
