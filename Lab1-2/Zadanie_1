@@ -11,31 +11,31 @@ namespace Csharp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine($"Введите s1: ");
+            Console.WriteLine("Введите s1: ");
             double s1 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine($"Введите s2: ");
+            Console.WriteLine("Введите s2: ");
             double s2 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine($"Введите s3: ");
+            Console.WriteLine("Введите s3: ");
             double s3 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine($"Введите s4: ");
+            Console.WriteLine("Введите s4: ");
             double s4 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine($"Введите s5: ");
+            Console.WriteLine("Введите s5: ");
             double s5 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("\n");
 
-            Console.WriteLine($"Введите t1: ");
+            Console.WriteLine("Введите t1: ");
             double t1 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine($"Введите t2: ");
+            Console.WriteLine("Введите t2: ");
             double t2 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine($"Введите t3: ");
+            Console.WriteLine("Введите t3: ");
             double t3 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine($"Введите t4: ");
+            Console.WriteLine("Введите t4: ");
             double t4 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine($"Введите t5: ");
+            Console.WriteLine("Введите t5: ");
             double t5 = Convert.ToDouble(Console.ReadLine());
 
             double Vsr = (s1 + s2 + s3 + s4 + s5) / (t1 + t2 + t3 + t4 + t5);
-            Console.WriteLine($"Средняя скорость = {Vsr}");
+            Console.WriteLine("Средняя скорость = " + Vsr);
             Console.ReadKey();
         }
     }
