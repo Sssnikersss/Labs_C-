@@ -17,15 +17,15 @@ namespace Csharp1
             double b = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("\n");
 
-            for(double i = a; i <= b; i += 0.1)
+            for (double i = a; i <= b; i += 0.1)
             {
-                Console.WriteLine($"Квадрат {i} = {i*i}");
+                Console.WriteLine("Квадрат " + i + " = " + i * i);
             }
             Console.WriteLine("\n");
 
             for (double i = a; i <= b; i += 0.1)
             {
-                Console.WriteLine($"Куб {i} = {i * i * i}");
+                Console.WriteLine("Куб " + i + " = " + i * i * i);
             }
             Console.ReadKey();
         }
