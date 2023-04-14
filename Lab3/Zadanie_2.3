@@ -14,8 +14,6 @@ namespace ConsoleApp2
         {
             double a;
             double b;
-            double c;
-            double n = 0;
             double eps;
             Console.Write("Введите левый конец отрезка (a): ");
             a = Convert.ToDouble(Console.ReadLine());
@@ -25,22 +23,8 @@ namespace ConsoleApp2
             eps = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine();
 
-            do
-            {
-                c = (a + b) / 2;
-                if (func(c) * func(a) <= 0)
-                {
-                    b = c;
-                }
-                else
-                {
-                    a = c;
-                }
-                n += 1;
-            }
-            while (Math.Abs(func(a - b)) >= eps);
-            Console.WriteLine("x = " + c);
-            Console.WriteLine("n = " + n + " (количество итераций)");
+           
+            Console.WriteLine("x = " + find(a, b, eps));
             Console.ReadKey();
         }
         //Функция
@@ -51,11 +35,14 @@ namespace ConsoleApp2
         //Функция нахождения корней
         static double find(double a, double b, double eps)
         {
-            while (Math.Abs(a - b) > eps);
+            double n=0;
+            while (Math.Abs(a - b) > eps)
             {
                 a = b - (b - a) * func(b) / (func(b) - func(a));
                 b = a - (a - b) * func(a) / (func(a) - func(b));
+                n++;
             }
+            Console.WriteLine("n = " + n);
             return b;
         }
     }
