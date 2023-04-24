@@ -1,1 +1,82 @@
+//Вариант 8
+//ЛР_4
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int N = 0;
+            Console.Write("Введите размер линейного массива: ");
+            N = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
+            Console.WriteLine("Заполните массив целыми (положительными/отрицательными) числами:");
+            int[] array = new int[N];
+
+            //Ввод элементов массива
+            for (int i = 0; i < N; i++)
+            {
+                Console.Write("A[" + i +"] " + "= ");
+                array[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine();
+
+            //Вывод элементов массива
+            Console.WriteLine("Введённый массив:");
+            Console.Write("array[");
+            for (int i = 0; i < N; i++)
+            {
+                Console.Write("  " + array[i] + "  ");
+            }
+            Console.WriteLine("]");
+            Console.WriteLine();
+
+            //*************** Задание "а" ***************
+            Console.WriteLine("\t\t\t\t\tЗадание 'а':");
+            //Поиск максимального элемента и его индекса
+            int M1 = 0;
+            int max = array[0];
+            for (int i = 1; i < N; i++)
+            {
+                if (array[i] > max)
+                {
+                    max = array[i];
+                    M1 = i;
+                }
+            }
+            Console.WriteLine("Индекс максимального элемента: " + M1);
+            //Поиск минимального элемента и его индекса
+            int M2 = 0;
+            int min = array[0];
+            for (int i = 1; i < N; i++)
+            {
+                if (array[i] < min)
+                {
+                    min = array[i];
+                    M2 = i;
+                }
+            }
+            Console.WriteLine("Индекс минимального элемента: " + M2);
+            Console.WriteLine("Среднее геометрическое номеров максимального и минимального элементов массива: " + One(M1, M2));
+            //*******************************************
+
+            //+++++++++++++++ Задание "б" +++++++++++++++
+
+
+            Console.ReadKey();
+        }
+        //Функция вычисления среднего геометрического номеров максимального и минимального элементов массива (для задания "а")
+        static double One(int M1, int M2)
+        {
+            double K = (M1 * M2);
+            return Math.Sqrt(K);
+        }
+    }
+}
