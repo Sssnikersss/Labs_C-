@@ -13,23 +13,25 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
+            int Left = -100;
+            int Right = 100;
             int N = 0;
             Console.Write("Введите размер линейного массива: ");
             N = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine();
-            Console.WriteLine("Заполните массив целыми (положительными/отрицательными) числами:");
             int[] array = new int[N];
+            Console.WriteLine();
+            Console.WriteLine("Заполнение массива случайными целыми (положительными/отрицательными) числами:");
 
-            //Ввод элементов массива
+            Random rand = new Random();
             for (int i = 0; i < N; i++)
             {
-                Console.Write("A[" + i +"] " + "= ");
-                array[i] = Convert.ToInt32(Console.ReadLine());
+                array[i] = rand.Next(Left, Right);
+                Console.Write("A[" + i + "] " + "= " + array[i] + "\n");
             }
             Console.WriteLine();
 
             //Вывод элементов массива
-            Console.WriteLine("Введённый массив:");
+            Console.WriteLine("Полученный массив:");
             Console.Write("array[");
             for (int i = 0; i < N; i++)
             {
@@ -65,11 +67,41 @@ namespace ConsoleApp2
             }
             Console.WriteLine("Индекс минимального элемента: " + M2);
             Console.WriteLine("Среднее геометрическое номеров максимального и минимального элементов массива: " + One(M1, M2));
+            Console.WriteLine();
             //*******************************************
 
             //+++++++++++++++ Задание "б" +++++++++++++++
+            Console.WriteLine("\t\t\t\t\tЗадание 'б':");
+            //Вычисление суммы положительных элементов массива
+            int Spolozh = 0;
+            int schet = 0;
+            for (int i = 0; i < N; i++)
+            {
+                if (array[i] >= 0)
+                {
+                    Spolozh = Spolozh + array[i];
+                    schet++;
+                }
+            }
+            Console.WriteLine("Сумма положительных элементов массива: " + Spolozh);
+            //Вычисление произведения отрицательных элементов массива
+            int Potrich = 1;
+            for (int i = 0; i < N; i++)
+            {
+                if (array[i] < 0)
+                {
+                    Potrich = Potrich * array[i];
+                }
+            }
+            Console.WriteLine("Произведение отрицательных элементов массива: " + Potrich);
+            Console.WriteLine("Разность суммы положительных и произведения отрицательных чисел массива: " + (Spolozh - Potrich));
+            Console.WriteLine();
+            //+++++++++++++++++++++++++++++++++++++++++++
 
-
+            //_-_-_-_-_-_-_-_ Задание "в" _-_-_-_-_-_-_-_
+            Console.WriteLine("\t\t\t\t\tЗадание 'в':");
+            Console.WriteLine("Количество положительных элементов массива, включая нулевое значение: " + schet + "\n");
+            //_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
             Console.ReadKey();
         }
         //Функция вычисления среднего геометрического номеров максимального и минимального элементов массива (для задания "а")
