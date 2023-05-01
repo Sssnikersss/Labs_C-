@@ -1,1 +1,33 @@
+//Курсовая
+//Блок_1
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Сила Лоренца: F=qvB*sin(A)
+            double F, q, v, B, A;//Объявление пяти переменных типа double
+            Console.WriteLine("\t\tСила Лоренца: F=qvB*sin(A) (в Ньютонах)\n");
+            Console.Write("Введите модуль заряда движущейся частицы - q (в Кулонах): ");//Вывод на консоль приглашения к вводу
+            q = Convert.ToDouble(Console.ReadLine());//Считывание введённых пользователем символов и их передача в переменную q
+            Console.Write("Введите скорость частицы - v (в м/с): ");
+            v = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите индукцию магнитного поля - B (в Теслах): ");
+            B = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите угол между вектором магнитной индукции и направлением вектора скорости частицы - A (в градусах): ");
+            A = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine();//Печать пустой строки
+            F = q * v * B * Math.Sin(A* Math.PI / 180);//Расчёт силы Лоренца (величина введённого угла переводится в радианы)
+            Console.WriteLine("F = " + F + " Н\n");//Вывод на консоль значения силы Лоренца (в Ньютонах)
+            Console.ReadKey();//Остановка выполнения программы до тех пор, пока пользователь не нажмет клавишу и приложение не завершит работу
+        }
+    }
+}
