@@ -1,0 +1,23 @@
+//Курсовая
+//Блок_2(№2)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        { 
+            for (int i = 0; i <= 15; i = i + 3)//Цикл, который повторится 6 раз
+            {
+                Console.WriteLine("2 + 2^" + i + " = " + (2 + Math.Pow(2, i)));//Вывод на экран консоли условия и результата
+            }
+            Console.ReadKey();//Остановка выполнения программы до тех пор, пока пользователь не нажмет клавишу и приложение не завершит работу
+        }
+    }
+}
