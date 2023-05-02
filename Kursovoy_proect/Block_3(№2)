@@ -24,7 +24,7 @@ namespace ConsoleApp2
             c = Convert.ToDouble(Console.ReadLine());//Считывание введённых пользователем символов и их передача в переменную c
             Console.WriteLine();//Печать пустой строки
 
-            Console.WriteLine("Ответ: " + func(a, b, c));//Вывод в консоль
+            Console.WriteLine("Ответ: " + func(a, b, c));//Вывод в консоль ответа путём вызова метода func
 
             Console.ReadKey();//Остановка выполнения программы до тех пор, пока пользователь не нажмет клавишу и приложение не завершит работу
         }
