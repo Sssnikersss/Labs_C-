@@ -1,0 +1,44 @@
+//Курсовая
+//Блок_3(№4.do-while)
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double a, c;//Объявление трёх переменных типа double
+            Console.WriteLine("Уравнение: x=sin(a)/a^(c/b) * b/(b*12+2*a-2*c^5)\n");
+            Console.Write("Введите число a: ");
+            a = Convert.ToDouble(Console.ReadLine());//Считывание введённых пользователем символов и их передача в переменную a
+            Console.Write("Введите число c: ");
+            c = Convert.ToDouble(Console.ReadLine());//Считывание введённых пользователем символов и их передача в переменную c
+            Console.WriteLine();//Печать пустой строки
+
+            int i = 1;
+            do
+            {
+                Console.WriteLine("При b = " + i + " ответ: " + func(a, i, c));
+                i += 2;//Увеличение значения переменной на 2 в конце каждой итерации
+            }
+            while (i <=20);
+
+            Console.WriteLine();//Печать пустой строки
+            Console.ReadKey();//Остановка выполнения программы до тех пор, пока пользователь не нажмет клавишу и приложение не завершит работу
+        }
+        //Метод для решения уравнения
+        static double func(double a, double b, double c)//Определение метода
+        {
+            double x;
+            x = Math.Sin(a * Math.PI / 180) / (Math.Pow(a, c / b)) * b / (b * 12 + 2 * a - 2 * Math.Pow(c, 5));//Расчёт переменной x
+            return x;//Значение, возвращаемое методом
+        }
+    }
+}
