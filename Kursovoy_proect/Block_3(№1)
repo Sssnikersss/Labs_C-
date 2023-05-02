@@ -1,0 +1,32 @@
+//Курсовая
+//Блок_3(№1)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int K = 0;
+            Console.WriteLine("Сколько будет трижды три?");//Вывод на консоль вопроса
+            Console.Write("Ваш ответ: ");//Вывод на консоль
+            K = Convert.ToInt32(Console.ReadLine());//Считывание введённых пользователем символов и их передача в переменную K
+            Console.WriteLine();//Печать пустой строки
+            if (K == 9)//Условие, при котором будет выполнятся действие в фигурных скобках
+            {
+                Console.WriteLine("Верно! 9.");//Вывод на консоль
+            }
+            else
+            {
+                Console.WriteLine("Ответ неверный. Попробуйте ещё раз.");//Предложение, выводящееся на консоль при невыполнении основного условия
+            }
+            Console.ReadKey();//Остановка выполнения программы до тех пор, пока пользователь не нажмет клавишу и приложение не завершит работу
+        }
+    }
+}
