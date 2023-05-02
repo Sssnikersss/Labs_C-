@@ -22,7 +22,7 @@ namespace ConsoleApp2
             c = Convert.ToDouble(Console.ReadLine());//Считывание введённых пользователем символов и их передача в переменную c
             Console.WriteLine();//Печать пустой строки
 
-            for (int i = 1; i <=20; i = i + 2)
+            for (int i = 1; i <=20; i += 2)
             {
                 Console.WriteLine("При b = " + i + " ответ: " + func(a, i, c));
             }
