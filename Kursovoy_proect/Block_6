@@ -1,0 +1,65 @@
+//Курсовая
+//Блок_6
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int N = 10;//Объявление и инициализация переменной под размер массива
+            double[] array = new double[N];//Объявление одномерного массива из N чисел с плавающей точкой
+            Console.WriteLine("\t\t\tВведите " + N + " элемент(а/ов) массива:");
+
+            //Ввод элементов массива
+            for (int i = 0; i < N; i++)
+            {
+                Console.Write("A[" + i + "] = ");
+                array[i] = Convert.ToDouble(Console.ReadLine());//Присвоение i-му элементу массива значения, введённого с клавиатуры 
+            }
+            Console.WriteLine();//Печать пустой строки
+
+            //Вывод элементов массива в строку
+            Console.WriteLine("Введённый массив:");
+            Console.Write("array[");
+            for (int i = 0; i < N; i++)
+            {
+                Console.Write("  " + array[i] + "  ");
+            }
+            Console.WriteLine("]");
+            Console.WriteLine();//Печать пустой строки
+
+            //Поиск минимального элемента и его индекса
+            int M = 0;//Объявление и инициализация переменной для запоминания индекса минимального элемента
+            double min = array[0];//Присвоение переменной, отвечающей за минимальное значение, значения элемента массива с нулевым индексом
+            for (int i = 1; i < N; i++)
+            {
+                if (array[i] < min)
+                {
+                    min = array[i];
+                    M = i;
+                }
+            }
+
+            Console.WriteLine("Индекс минимального элемента: " + M);
+            Console.WriteLine("Минимальный элемент равен: " + array[M]);
+            
+            if (M == (N - 1))//Условие равенства индексов минимального элемента массива и последнего элемента
+            {
+                Console.WriteLine("Минимальный элемент является последним в массиве!");
+            }
+            else
+            {
+                Console.WriteLine("Элемент, следующий за минимальным, равен: " + array[M + 1] + "\n");
+            }
+            
+            Console.ReadKey();//Остановка выполнения программы до тех пор, пока пользователь не нажмет клавишу и приложение не завершит работу
+        }
+    }
+}
