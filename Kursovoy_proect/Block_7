@@ -1,0 +1,74 @@
+//Курсовая
+//Блок_7
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int Left = -100;//Нижняя граница диапазона заполнения массива случайными числами
+            int Right = 100;//Верхняя граница диапазона заполнения массива случайными числами
+            int N = 0;//Переменная для размера массива
+            Console.Write("Введите размер линейного массива: ");
+            N = Convert.ToInt32(Console.ReadLine());//Считывание введённого с клавиатуры размера массива и его присвоение переменной N
+            int[] array = new int[N];//Объявление одномерного массива из N целочисленных переменных
+            Console.WriteLine();//Печать пустой строки
+            Console.WriteLine("Заполнение массива случайными целыми (положительными/отрицательными) числами:");
+
+            Random rand = new Random();//Объявление экземпляра класса Random
+
+            //Ввод элементов массива
+            for (int i = 0; i < N; i++)
+            {
+                array[i] = rand.Next(Left, Right);//Использование метода Next для заполнения массива случайными числами (в скобках указываются минимальное и максимальное значения диапазона случайных чисел)
+                Console.Write("A[" + i + "] " + "= " + array[i] + "\n");
+            }
+            Console.WriteLine();//Печать пустой строки
+
+            //Вывод элементов массива в строку
+            Console.WriteLine("Полученный массив:");
+            Console.Write("array[");
+            for (int i = 0; i < N; i++)
+            {
+                Console.Write("  " + array[i] + "  ");
+            }
+            Console.WriteLine("]");
+            Console.WriteLine();//Печать пустой строки
+
+            //Сортировка пузырьком (по возрастанию)
+            int tmp;
+            for (int i = 0; i < N; i++)
+            {
+                for (int j = 0; j < N - i - 1; j++)
+                {
+                    if (array[j] > array[j + 1])
+                    {
+                        tmp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = tmp;
+                    }
+                }
+            }
+
+            //Вывод отсортированного массива в строку
+            Console.WriteLine("Отсортированный по возрастанию массив:");
+            Console.Write("array[");
+            for (int i = 0; i < N; i++)
+            {
+                Console.Write("  " + array[i] + "  ");
+            }
+            Console.WriteLine("]");
+            Console.WriteLine();//Печать пустой строки
+
+            Console.ReadKey();//Остановка выполнения программы до тех пор, пока пользователь не нажмет клавишу и приложение не завершит работу
+        }
+    }
+}
