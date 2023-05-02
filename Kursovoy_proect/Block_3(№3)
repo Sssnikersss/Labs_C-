@@ -14,7 +14,7 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            double a, b, c;//Объявление трёх переменных типа double
+            double a, c;//Объявление трёх переменных типа double
             Console.WriteLine("Уравнение: x=sin(a)/a^(c/b) * b/(b*12+2*a-2*c^5)\n");
             Console.Write("Введите число a: ");
             a = Convert.ToDouble(Console.ReadLine());//Считывание введённых пользователем символов и их передача в переменную a
