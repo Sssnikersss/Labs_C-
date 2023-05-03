@@ -1,0 +1,48 @@
+//Курсовая
+//Блок_4
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication14
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double x;//Объявлениие переменной под значение x
+            double sum1 = 0;//Вспомогательная переменная для промежуточного расчёта суммы ряда
+            double sum = 0;//Переменная для накопления значения суммы ряда
+            double product1 = 0;//Вспомогательная переменная для промежуточного расчёта произведения ряда
+            double product = 1;//Переменная для накопления значения произведения ряда
+            double upper;//Переменная, обозначающая верхний предел
+            double lower = 1;//Переменная, обозначающая нижний предел
+
+
+            Console.Write("Введите значение x: ");
+            x = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите значение верхнего предела: ");
+            upper = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine();//Печать пустой строки
+
+            for (double i = lower; i <= upper; i++)//Цикл от нижнего предела до задаваемого верхнего с шагом 1
+            {
+                sum1 = Math.Pow(x, i);//Промежуточное действие для вычисления суммы ряда
+                sum += sum1;//Суммирование промежуточных результатов
+            }
+            Console.WriteLine("Сумма ряда = " + sum);
+
+            for (double i = lower; i <= upper; i++)//Цикл от нижнего предела до задаваемого верхнего с шагом 1
+            {
+                product1 = Math.Pow(x, i);//Промежуточное действие для вычисления произведения ряда
+                product *= product1;//Перемножение промежуточных результатов
+            }
+            Console.WriteLine("Произведение ряда = " + product);
+            Console.WriteLine();//Печать пустой строки
+
+            Console.ReadKey();//Остановка выполнения программы до тех пор, пока пользователь не нажмет клавишу и приложение не завершит работу
+        }
+    }
+}
