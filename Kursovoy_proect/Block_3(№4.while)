@@ -36,7 +36,7 @@ namespace ConsoleApp2
         static double func(double a, double b, double c)//Определение метода
         {
             double x;
-            x = Math.Sin(a * Math.PI / 180) / (Math.Pow(a, c / b)) * b / (b * 12 + 2 * a - 2 * Math.Pow(c, 5));//Расчёт переменной x
+            x = Math.Sin(a) / (Math.Pow(a, c / b)) * b / (b * 12 + 2 * a - 2 * Math.Pow(c, 5));//Расчёт переменной x
             return x;//Значение, возвращаемое методом
         }
     }
